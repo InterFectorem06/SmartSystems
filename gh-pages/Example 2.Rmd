@@ -11,16 +11,52 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(leaflet)
 
-EAIcon <- makeIcon(
-  iconUrl = "http://pxl-ea-ict.be/trinity/images/2.png",
+
+  
+  BusinessIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_business.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+  TechIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_tech.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+  
+  EducationIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_education.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+  MadIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_mad.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+  HealthcareIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_healthcare.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+  ITIcon <- makeIcon(
+  iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_it.png",
   iconWidth = 160, iconHeight = 100,
   iconAnchorX = 22, iconAnchorY = 94
 )
 
 
+
+
 EA_map <- leaflet() %>% 
   addTiles() %>%
-  addMarkers(lng=5.384984, lat=50.927781, icon = EAIcon, popup='<a href="https://www.facebook.com/pbaeaict/">PBA EA-ICT!</a>')
+  addMarkers(lng=5.384984, lat=50.927781, icon = TechIcon)%>%
+  addMarkers(lng=5.348377, lat=50.938219, icon = ITIcon)%>%
+  addMarkers(lng=5.344271, lat=50.935404, icon = EducationIcon)%>%
+  addMarkers(lng=5.348217, lat=50.938172,  icon = BusinessIcon)%>%
+  addMarkers(lng=5.342467, lat=50.927906,  icon = HealthcareIcon)%>%
+  addMarkers(lng=5.349772, lat=50.938228, icon = MadIcon)
+
 EA_map
 ```
 
